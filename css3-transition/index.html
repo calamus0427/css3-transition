@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>CSS3动画生成器</title>
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<link rel="stylesheet" href="css/index.css"/>
+</head>
+<body >
+	<h1 style="margin:10px;text-align:center;color:#63C;font-family:微软雅黑;">CSS3动画生成器</h1>
+    
+	 <canvas id="canvas" width='300' height='500' style='margin-left:100px;position:relative;border-left:1px #938F8F solid;border-bottom:1px #938F8F solid;background-image:url(img/canvas1.jpg)' onmousemove="getXY(event)"  onmouseout="clearXY()"></canvas>
+     
+     <div id="timer">Time:<span id="timerPercent">0</span></div>
+   	 <div id="progress">Progress:<span id="progressPercent" >0</span></div>
+ 	 <div id='bezierArg'>在屏幕点击并拖动参考点来生成贝塞尔曲线</div>
+ 	 <button class="renew" onclick='document.location.reload()'>刷新</button>
+     
+<div class="timing-function">
+    <dl>
+    	<dt class="ease" ><img src="img/ease.png" onclick="ease(event)"/></dt>
+        <dd>ease</dd>
+    </dl>
+        <dl>
+    	<dt class="ease-in"><img src="img/ease-in.png"  onclick="easeIn(event)"/></dt>
+        <dd>ease-in</dd>
+    </dl>
+        <dl>
+    	<dt class="ease-out" ><img src="img/ease-out.png" onclick="easeOut(event)"/></dt>
+        <dd>ease-out</dd>
+    </dl>
+        <dl>
+    	<dt class="ease-in-out" ><img src="img/ease-in-out.png" onclick="easeInOut(event)"/></dt>
+        <dd>ease-in-out</dd>
+    </dl>
+        <dl>
+    	<dt class="linear" ><img src="img/linear.png" onclick="linear(event)"/></dt>
+        <dd>linear</dd>
+    </dl>
+</div>
+
+<div class="select"><a href="propertySelect.html" target="_self">请选择演示变化属性Property</a></div>
+<!--duration、delay的选择进度条-->
+<div class="delay">
+	<span class="delayTitle">delay</span>
+    <div id= "delayBox" ">
+        <div id="progressDelay"></div>
+    </div>
+    <span class="delayNum" id="delayNum">0s</span>
+</div>
+<div class="duration">
+	<span class="delayTitle">duration</span>
+    <div id= "durationBox"  ">
+        <div id="progressDuration"></div>
+    </div>
+    <span class="durationNum" id="durationNum">0.1s</span>
+</div>
+
+<div class="preview">
+	<button id="run" value="预览" onmousedown="run(8)" onmouseup="clearRun()">preview</button>
+    	<p id="remind"  >持续点击按键展示动画效果</p>
+	<button id="import" value="输入参数" onclick="msgbox(1)">import</button>
+    <button id="export" value="输出参数" onclick="alertMsg()">export</button>
+    <img id="previewImg" src="img/smile.jpg" />
+</div>
+<!--隐藏的输入对话框-->
+<div id='inputbox' class="box">
+        X1:<input type="text" id="x1"  placeholder="bezier第一个参数"><br/>
+        Y1:<input type="text" id="y1" placeholder="bezier第二个参数"><br/>
+        X2:<input type="text" id="x2" placeholder="bezier第三个参数"><br/>
+        Y2:<input type="text" id="y2"placeholder="bezier第四个参数"><br/>
+		<div class="close" ><div id="close" href=''; onclick="msgbox(0); return false;">关闭</div></div>
+        <div class="yes"><div  id="yes"  onclick="submitBezier()">确定</div></div>
+</div>
+
+<div id='outputbox' class="box1">
+        <p id="outputMsg" class="outputContent">
+        #previewImg{<br/>
+		-webkit-transition:all <span class="duT">3</span>s <span class="TF"> ease</span> <span class="deT"></span>s;  <br/>
+		-moz-transition:all <span class="duT">3</span>s <span class="TF"> ease</span> <span class="deT"></span>s;  <br/>
+		-ms-transition:all <span class="duT">3</span>s <span class="TF"> ease</span> <span class="deT"></span>s;  <br/>
+		-0-transition:all <span class="duT">3</span>s <span class="TF"> ease</span> <span class="deT"></span>s;  <br/>
+		transition:all <span class="duT">3</span>s <span class="TF"> ease</span> <span class="deT"></span>s;  <br/>
+        <div class="close" ><div id="close" href=''; onclick="msgbox1(0); return false;">关闭</div></div>
+
+<script src="js/bezier.js">
+</script>
+</div></body>
+</html>

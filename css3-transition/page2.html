@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" >
+<title>三次贝塞尔曲线</title>
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<link rel="stylesheet" href="css/index.css"/>
+</head>
+<body onload="draw()">
+<h1 style="margin:10px;text-align:center;color:#63C;font-family:微软雅黑;">CSS3动画生成器</h1>
+<canvas id="canvas" width="300" height="500" ></canvas>
+<div id="timer">Time:<span id="timerPercent">0</span></div>
+<div id="progress">Progress:<span id="progressPercent" >0</span></div>
+<div id= "big" onmousemove="getXY(event)" onmouseout="clearXY()">
+	<div id="start"  onmousedown="start_down(event)"></div>
+    <div id="end" onmousedown="end_down(event)"></div>
+</div>
+<div class="timing-function">
+    <dl>
+    	<dt class="ease"><img src="img/ease.png"/></dt>
+        <dd>ease</dd>
+    </dl>
+        <dl>
+    	<dt class="ease-in"><img src="img/ease-in.png"/></dt>
+        <dd>ease-in</dd>
+    </dl>
+        <dl>
+    	<dt class="ease-out"><img src="img/ease-out.png"/></dt>
+        <dd>ease-out</dd>
+    </dl>
+        <dl>
+    	<dt class="ease-in-out"><img src="img/ease-in-out.png"/></dt>
+        <dd>ease-in-out</dd>
+    </dl>
+        <dl>
+    	<dt class="linear"><img src="img/linear.png"/></dt>
+        <dd>linear</dd>
+    </dl>
+</div>
+<div class="select"><a href="propertySelect.html"target="_self">请选择演示变化属性Property</a></div>
+<div class="delay">
+	<span class="delayTitle">delay</span>
+    <div id= "delayBox" onclick="delayPos(e)">
+        <div id="progressDelay"></div>
+    </div>
+    <span class="delayNum">0s</span>
+</div>
+<div class="duration">
+	<span class="delayTitle">duration</span>
+    <div id= "durationBox" onclick="durationPos(e)">
+        <div id="progressDuration"></div>
+    </div>
+    <span class="durationNum">0.1s</span>
+</div>
+<div class="preview">
+	<button id="run" value="预览" onclick="run()">preview</button>
+	<button id="import" value="输入参数" onclick="msgbox(1)">import</button>
+    <button id="export" value="输出参数" onclick="alertMsg()">export</button>
+    <div id="previewImg"></div>
+</div>
+<!--隐藏的输入对话框-->
+<div id='inputbox' class="box">
+        X1:<input type="text" placeholder="请输入第一个点的X参数"><br/>
+        Y1:<input type="text" placeholder="请输入第一个点的y参数"><br/>
+        X2:<input type="text" placeholder="请输入第二个点的X参数"><br/>
+        Y2:<input type="text" placeholder="请输入第二个点的y参数"><br/>
+        <div class="close" ><a id="class" href=''; onclick="msgbox(0); return false;">关闭</a></div>
+        <div class="yes"><a  id="yes"href=''; onclick="msgbox(0); return false;">确定</a></div>
+</div>
+<div id='outputbox' class="box">
+        <p id="outputMsg" class="outputContent">你好</p>
+        <div class="close" ><a id="class" href=''; onclick="msgbox1(0); return false;">关闭</a></div>
+        <div class="yes"><a  id="yes" href=''; onclick="msgbox1(0); return false;">确定</a></div>
+</div>
+<!--进度条-->
+<script src="js/progress.js"></script>
+<script src="js/bezier.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+header{
+	text-align:center;
+	color:#63C;
+	font-family:微软雅黑;
+	}
+dl{
+	float:left;
+	margin-left:170px;
+	margin-top:85px;	
+	}
+dd{
+	color:#009;
+	text-align:center;
+	font-family:Verdana, Geneva, sans-serif;
+	margin-top:10px;
+	}
+.content{
+	}
+img{
+	width:120px;
+	height:120px;
+	border-radius:60px;
+	}
+.box1,.box2,.box3,.box4,.box5,.box6,.box7,.box8{
+	-webkit-transition:all 2s ease ;  
+	-moz-transition:all 2s ease ;  
+	-ms-transition:all 2s ease ;  
+	-0-transition:all 2s ease;  
+	transition:all 2s ease 5s; 
+	border-radius:60px;
+	-o-border-radius:60px;;
+	-webkit-border-radius:60px;
+	-ms-border-radius:60px;
+	-moz-border-radius:60px;
+	}
+.box1{
+	border-radius:60px;
+	width:120px;
+	height:120px;
+	background:yellow;
+	}
+.box1:hover{background:#8127F0;}
+.box2{
+/*	width:120px;
+	height:120px;
+	background-color:rgba(255,255,0,1);
+	border-radius:60px; */
+
+	}
+.box2:hover{
+	opacity:0;
+	filter:alpha(opacity=0);       	 /* 针对 IE8 以及更早的版本 */
+	}
+	
+.box3:hover{width:200px;}
+.box4:hover{height:200px;}
+.box5:hover{transform:scale(1.8,1.8);}
+.box6:hover{transform:scale(0.5,0.5);}
+.box7:hover{transform:rotate(360deg);}
+.box8:hover{transform:translateY(100px);}
